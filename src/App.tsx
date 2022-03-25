@@ -1,26 +1,114 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Container, Grid, Text, Col } from "@mantine/core";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container
+      sx={{
+        backgroundColor: "red",
+        height: "100vh",
+        // display: "flex",
+      }}
+      fluid
+    >
+      <Grid
+        sx={{
+          display: "flex",
+          backgroundColor: "honeydew",
+          justifyContent: "center",
+          height: "100vh",
+          maxWidth: "960px",
+          padding: "4rem",
+        }}
+      >
+        <Col
+          sx={{
+            backgroundColor: "beige",
+            margin: "5px",
+            maxHeight: "100px",
+            maxWidth: "100px",
+          }}
+          span={2}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+        <Col sx={{ backgroundColor: "beige", margin: "5px" }} span={2}>
+          <Text>f</Text>
+        </Col>
+      </Grid>
+    </Container>
   );
-}
+};
 
 export default App;
