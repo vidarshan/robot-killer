@@ -6,21 +6,20 @@ import castle from "./images/castle.png";
 import robot from "./images/robot.png";
 
 const App = () => {
-  const gridSizeInput = 12;
+  const gridSizeInput = 5;
   const [gridSize, setGridSize] = useState(0);
 
   const calculateGridSize = (sizeInput: number) => {
     setGridSize(sizeInput * sizeInput);
   };
 
-  const getRows = () => {};
-
   const returnGrid = () => {
-    let rows = [];
+    let cells = [];
     let columns = [];
+    let count = 1;
 
     for (let i = 0; i < gridSizeInput; i++) {
-      rows.push(
+      cells.push(
         <Box
           sx={{
             backgroundColor: "beige",
@@ -31,8 +30,11 @@ const App = () => {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></Box>
+        >
+          {count}
+        </Box>
       );
+      count++;
     }
     for (let i = 0; i < gridSizeInput; i++) {
       columns.push(
@@ -43,14 +45,12 @@ const App = () => {
             backgroundColor: "blueviolet",
           }}
         >
-          {rows.map((box) => {
-            return box;
+          {cells.map((cell) => {
+            return cell;
           })}
         </Container>
       );
     }
-
-    console.log(columns);
 
     return (
       <Box sx={{ backgroundColor: "greenyellow" }}>
@@ -59,21 +59,6 @@ const App = () => {
         })}
       </Box>
     );
-    // return (
-    //   <Box sx={{ backgroundColor: "greenyellow" }}>
-    //     <Container
-    //       sx={{
-    //         display: "flex",
-    //         flexDirection: "row",
-    //         backgroundColor: "blueviolet",
-    //       }}
-    //     >
-    //       {rows.map((col) => {
-    //         return col;
-    //       })}
-    //     </Container>
-    //   </Box>
-    // );
   };
 
   useEffect(() => {
@@ -83,7 +68,6 @@ const App = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "red",
         height: "100vh",
         display: "flex",
         flexDirection: "row",
@@ -92,280 +76,6 @@ const App = () => {
       }}
     >
       {returnGrid()}
-      {/* <Box sx={{ backgroundColor: "greenyellow" }}>
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Box
-            onClick={() => console.log(1)}
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image src={robot} width="30px" />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-        </Container>
-
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-        </Container>
-
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            <Image src={castle} width="40px" />
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-        </Container>
-
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-        </Container>
-
-        <Container sx={{ display: "flex", flexDirection: "row" }}>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: "beige",
-              height: "50px",
-              width: "50px",
-              margin: "10px",
-            }}
-          >
-            f
-          </Box>
-        </Container>
-      </Box> */}
-      {/* {returnGrid()} */}
     </Box>
   );
 };
