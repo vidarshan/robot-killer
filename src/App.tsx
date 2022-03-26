@@ -6,17 +6,74 @@ import castle from "./images/castle.png";
 import robot from "./images/robot.png";
 
 const App = () => {
-  const gridSizeInput = 5;
+  const gridSizeInput = 12;
   const [gridSize, setGridSize] = useState(0);
 
   const calculateGridSize = (sizeInput: number) => {
     setGridSize(sizeInput * sizeInput);
   };
 
+  const getRows = () => {};
+
   const returnGrid = () => {
-    for (let i = 0; i <= gridSize; i++) {
-      return <Box>dgdgd</Box>;
+    let rows = [];
+    let columns = [];
+
+    for (let i = 0; i < gridSizeInput; i++) {
+      rows.push(
+        <Box
+          sx={{
+            backgroundColor: "beige",
+            height: "50px",
+            width: "50px",
+            margin: "10px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        ></Box>
+      );
     }
+    for (let i = 0; i < gridSizeInput; i++) {
+      columns.push(
+        <Container
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            backgroundColor: "blueviolet",
+          }}
+        >
+          {rows.map((box) => {
+            return box;
+          })}
+        </Container>
+      );
+    }
+
+    console.log(columns);
+
+    return (
+      <Box sx={{ backgroundColor: "greenyellow" }}>
+        {columns.map((col) => {
+          return col;
+        })}
+      </Box>
+    );
+    // return (
+    //   <Box sx={{ backgroundColor: "greenyellow" }}>
+    //     <Container
+    //       sx={{
+    //         display: "flex",
+    //         flexDirection: "row",
+    //         backgroundColor: "blueviolet",
+    //       }}
+    //     >
+    //       {rows.map((col) => {
+    //         return col;
+    //       })}
+    //     </Container>
+    //   </Box>
+    // );
   };
 
   useEffect(() => {
@@ -34,17 +91,22 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <Box sx={{ backgroundColor: "greenyellow" }}>
+      {returnGrid()}
+      {/* <Box sx={{ backgroundColor: "greenyellow" }}>
         <Container sx={{ display: "flex", flexDirection: "row" }}>
           <Box
+            onClick={() => console.log(1)}
             sx={{
               backgroundColor: "beige",
               height: "50px",
               width: "50px",
               margin: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            f
+            <Image src={robot} width="30px" />
           </Box>
           <Box
             sx={{
@@ -165,12 +227,15 @@ const App = () => {
           <Box
             sx={{
               backgroundColor: "beige",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               height: "50px",
               width: "50px",
               margin: "10px",
             }}
           >
-            <Image src="" />
+            <Image src={castle} width="40px" />
           </Box>
           <Box
             sx={{
@@ -299,7 +364,7 @@ const App = () => {
             f
           </Box>
         </Container>
-      </Box>
+      </Box> */}
       {/* {returnGrid()} */}
     </Box>
   );
